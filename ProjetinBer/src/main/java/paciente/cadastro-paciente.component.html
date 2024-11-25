@@ -1,0 +1,21 @@
+<div class="cadastro-paciente">
+  <h2>Cadastro de Paciente</h2>
+  <form (ngSubmit)="cadastrarPaciente()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="paciente.nome" name="nome" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="paciente.cpf" name="cpf" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="paciente.email" name="email" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+  </form>
+</div>
