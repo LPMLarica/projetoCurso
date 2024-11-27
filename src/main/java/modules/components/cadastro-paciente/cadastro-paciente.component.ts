@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { PacienteService } from '../../services/paciente.service';
 import { ActivatedRoute } from '../../../../../../@angular/router';
-import { Observable } from 'rxjs';
+import { Paciente } from 'paciente/paciente.model.ts';
 
 class Router {
+    navigate(strings: string[]) {
+
+    }
 }
 
 @Component({
@@ -11,22 +14,33 @@ class Router {
     templateUrl: './cadastro-paciente.component.html',
     styleUrls: ['./cadastro-paciente.component.css']
 })
-export class CadastroPacienteComponent {
+export class CadastroPacienteComponent implements OnInit {
+    pacientes: Paciente[] = []; // Array de pacientes
 
-    paciente = {
-        nome: '',
-        cpf: '',
-        email: '',
-        telefone: ''
-    };
+    constructor(private pacienteService: PacienteService) {}
 
+    ngOnInit(): void {
+        this.getPacientes();
+    }
 
-    constructor(private pacienteService: PacienteService, private router: Router) {}
+    // Método para buscar todos os pacientes
+    getPacientes(): void {
+        this.pacienteService.getPacientes().subscribe((data: Paciente[]) => {
+            this.pacientes = data;
+            console.log('Pacientes:', this.pacientes);
+        });
+    }
 
-    /**
-     * Método para enviar os dados do paciente para o backend.
-     */
-    cadastrarPaciente() {
+    // Exemplo de como acessar o pacienteId
+    logPacienteIds(): void {
+        this.pacientes.forEach(paciente => {
+            console.log('Paciente ID:', paciente.pacienteId);
+        });
+    }
+}
+
+function cadastrarPaciente() {
+
 
         if (!this.paciente.nome || !this.paciente.cpf || !this.paciente.email) {
             alert('Por favor, preencha todos os campos obrigatórios.');
@@ -45,5 +59,5 @@ export class CadastroPacienteComponent {
                 alert('Ocorreu um erro ao cadastrar o paciente. Tente novamente.');
             }
         });
-    }
+
 }

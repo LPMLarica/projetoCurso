@@ -32,7 +32,7 @@ export class PacienteDetalhesComponent implements OnInit {
             this.consultas = data;
         });
 
-        this.pacienteService.getExames(this.pacienteId).subscribe(data => {
+        this.pacienteService.(this.pacienteId).subscribe(data => {
             this.exames = data;
         });
     }

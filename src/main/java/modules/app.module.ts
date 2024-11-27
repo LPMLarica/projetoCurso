@@ -13,11 +13,11 @@ import { ConsultasComponent } from './components/consultas/consultas.component';
 import { ExamesComponent } from './components/exames/exames.component';
 
 // Angular Material Modules
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '../../../../@angular/material/form-field';
+import { MatInputModule } from '../../../../@angular/material/input';
+import { MatButtonModule } from '../../../../@angular/material/button';
+import { MatListModule } from '../../../../@angular/material/list';
+import { MatSidenavModule } from '../../../../@angular/material/sidenav';
 
 @NgModule({
     declarations: [
