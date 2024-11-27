@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PacienteService } from '../../paciente/Paciente';
-import { ActivatedRoute } from '@angular/router';
-
+import { PacienteService } from '../../services/paciente.service';
+import { ActivatedRoute } from '../../../../../../@angular/router';
 @Component({
     selector: 'app-hospitais',
     templateUrl: './hospitais.component.html',
