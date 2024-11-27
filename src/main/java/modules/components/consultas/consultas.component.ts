@@ -17,7 +17,9 @@ export class ConsultasComponent implements OnInit {
 
     ngOnInit(): void {
         const pacienteId = +this.route.parent?.snapshot.paramMap.get('id')!;
-        this.pacienteService.getConsultas(pacienteId).pacienteId((data) => {
+        var pacienteId1: any;
+        // @ts-ignore
+        pacienteId1 = this.pacienteService.getConsultas(pacienteId).pacienteId((data) => {
             this.consultas = data;
         });
     }

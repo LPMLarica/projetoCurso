@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { CadastroPacienteComponent } from './modules/components/cadastro-paciente/cadastro-paciente.component';
 import { PacienteDetalhesComponent } from './modules/components/paciente-detalhes/paciente-detalhes.component';
 import { HospitaisComponent } from './modules/components/hospitais/hospitais.component';
 import { ConsultasComponent } from './modules/components/consultas/consultas.component';
 import { ExamesComponent } from './modules/components/exames/exames.component';
+
 
 const routes: ({ path: string; pathMatch: string; redirectTo: string } | {
     path: string;

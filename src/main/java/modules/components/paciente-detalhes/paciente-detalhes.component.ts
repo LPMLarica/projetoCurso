@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PacienteService } from '../../services/paciente.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {PacienteService} from '../../services/paciente.service';
 
 @Component({
     selector: 'app-paciente-detalhes',
@@ -19,7 +19,11 @@ export class PacienteDetalhesComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.pacienteId = +this.route.pacienteId.paramMap.get('id')!;
+        // @ts-ignore
+        var {paramMap} = this.route.pacienteId;
+        let get: any;
+        ({get} = paramMap);
+        this.pacienteId = +get('id')!;
         this.carregarDadosPaciente();
     }
 
@@ -32,7 +36,7 @@ export class PacienteDetalhesComponent implements OnInit {
             this.consultas = data;
         });
 
-        this.pacienteService.(this.pacienteId).subscribe(data => {
+        this.pacienteService.getExames(this.pacienteId).subscribe(data => {
             this.exames = data;
         });
     }

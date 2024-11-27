@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { PacienteService } from '../../services/paciente.service';
 import { ActivatedRoute } from '../../../../../../@angular/router';
-import { Paciente } from 'paciente/paciente.model.ts';
+// @ts-ignore
+import {Paciente} from "../../paciente/paciente.model";
 
 class Router {
     navigate(strings: string[]) {
